@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none!important;
+}
+
+body {
+    font-family: 'Avenir', Helvetica, sans-serif;
+    line-height: 1.5;
+    text-align: center;
+    overflow: hidden;
+    background: black;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #00000000;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 4px;
+    background-color: #00000000;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color: #fff;
+}
+
+@keyframes animation {
+    0% {
+        fill: #ffffff00;
+        stroke-dasharray: 50vh;
+    }
+    50% {
+        fill: #ffffff00;
+        stroke-dasharray: 280vh;
+    }
+    70% {
+        stroke: #ffffff;
+    }
+    100% {
+        stroke: #ffffff00;
+        fill: #dcdcdc;
+        stroke-dasharray: 0vh;
+    }
+}
+
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    99% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes loading {
+    0% {
+        stroke-dasharray: 300px;
+    }
+    80% {
+        stroke-dasharray: 1200px;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes arrow {
+    0% {
+        height: 0;
+    }
+    90% {
+        height: 10vh;
+        opacity: 0;
+    }
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .smoooth-scroll-progress {
+        left: 0!important;
+    }
+    .logo-name svg {
+        height: 9vh!important;
+        width: auto!important;
+        position: fixed!important;
+        right: -24vh!important;
+        transform: rotate(90deg)!important;
+
+    }
+    .logo-name {
+        height: 100vh!important;
+    }
+    .smooth-scroll {
+        width: 100vw!important;
+        height: 100vh!important;
+        margin: 0!important;
+        z-index: 2!important;
+    }
+    .k {
+        display: grid!important;
+        grid-template-columns: 50% 50%!important;
+        width: 90%!important;
+        right: 5%!important;
+    }
+    .k1 img {
+        margin: auto!important;
+    }
+    .background-page {
+        height: 100vh!important;
+        width: -webkit-fill-available!important;
+        left: 0!important;
+        opacity: 30%!important;
+        z-index: 0!important;
+    }
+    .main {
+        height: 80vh!important;
+    }
+    .one {
+        height: 90%!important;
+    }
+    .media-button a {
+        margin: 4vh!important;
+    }
+    .arrow {
+        margin: 0!important;
+    }
+    .buy-button a {
+        width: 5vh!important;
+        height: 5vh!important;
+        line-height: 5.1vh!important;
+        font-size: 1.6vh!important;
+        z-index: 3!important;
+    }
+}
+.smooth-scroll {
+    width: 55vw;
+    height: 90vh;
+    margin: 5vh 5vh 5vh 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    right: 0;
+    position: absolute;
+    animation: fade 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+    opacity: 0;
+}
+
+.logo-name {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logo-name svg {
+    height: auto;
+    width: 39vw;
+    animation: animation 5s;
+    animation-fill-mode: forwards;
+    stroke-width: 0.5vh;
+    animation-delay: 4s;
+    z-index: 1;
+    stroke: white;
+}
+
+
+.logo-symbol svg {
+    height: 7vh;
+    width: auto;
+    position: absolute;
+    margin: 3vh 3vh 0 0;
+    fill: #000;
+    right: 0;
+    z-index: 1;
+}
+
+.main {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+}
+
+.one {
+    width: 75%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 5% 12.5%;
+}
+
+.one h1 {
+    font-size: 3vh;
+    color: white;
+    font-family: roboto;
+    font-weight: 200;
+    animation: fade 5s;
+    animation-fill-mode: forwards;
+}
+
+.loading-logo svg {
+    width: auto;
+    height: 13vh;
+    stroke: #fff;
+    z-index: 9000000;
+    position: relative;
+    animation: loading 3.5s;
+    animation-fill-mode: forwards;
+    fill: #00000000;
+    stroke-width: 0.3vh;
+    stroke: #fff;
+}
+
+.loading-page img {
+    width: 100vw;
+    position: absolute;
+    display: flex;
+}
+
+.loading-page {
+    animation: fadeout 1s;
+    animation-delay: 4s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    background: black;
+}
+
+.smoooth-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.p {
+    transition: all 0.6s;
+    opacity: 1;
+}
+
+.k {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+}
+
+.k1 img {
+    margin: 4vh;
+    height: 7vh;
+}
+
+.background-page {
+    height: 100vh;
+    width: 30vw;
+    left: 10vh;
+    z-index: 4;
+    position: absolute;
+    background-image: url(../img/back.svg);
+    background-size: cover;
+}
+
+.arrow {
+    background: url(../img/arrow.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 3vh;
+    width: 100%;
+    top: 85vh;
+    position: absolute;
+    margin: -10vh 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: arrow 1.5s;
+    animation-delay: 7s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2;
+}
+
+.buy-button a {
+    position: fixed;
+    width: 4vh;
+    height: 4vh;
+    color: white;
+    border-radius: 50%;
+    border: 0.2vh solid white;
+    right: 0;
+    margin: 5vh 5vh 0 0;
+    text-decoration: none;
+    text-align: center;
+    line-height: 4.1vh;
+    font-size: 1vh;
+    font-weight: 100;
+    mix-blend-mode: exclusion;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.buy-button a:hover {
+    transform: scale(1.1);
+}
+
+.two h1 {
+    position: relative;
+    font-size: 3vh;
+    color: white;
+    font-family: roboto;
+    font-weight: 200;
+    animation: fade 5s;
+    animation-fill-mode: forwards;
+}
+
+.media-button {
+    width: 100%;
+    position: relative;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-button a {
+    width: 6vh;
+    height: 6vh;
+    color: white;
+    border-radius: 50%;
+    border: 0.2vh solid white;
+    margin: 5vh;
+    text-decoration: none;
+    text-align: center;
+    line-height: 4.1vh;
+    font-size: 1vh;
+    font-weight: 100;
+    mix-blend-mode: exclusion;
+    z-index: 1;
+    transition: all 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-image {
+    width: 3vh;
+    height: 3vh;
+    position: absolute;
+}
+
+.media-button a:hover {
+    transform: scale(1.1);
+}
+
